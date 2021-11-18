@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="angular.min.js"></script>
+  <script src="bmi.js"></script>
+  <link rel="stylesheet" href="bmi.css">
+</head>
+
+<body ng-app="" onload="loadBody()">
+  <center>
+    <h1>BMI Calculator</h1>
+    <div id="main">
+      
+      <div>
+        <label id="label1" for="height">Enter height:</label>
+        <input type="number" ng-model="height" id="height" placeholder="in meters"><br>
+        <label id="label2" for="weight"> Enter your weight:</label>
+        <input type="number" id="weight" placeholder="in kilograms" ng-model="weight"> <br><br>
+        <div id="div1">
+          <label>BMI value : </label> <span id="bmivalue" onchange="calcBmi2()" ng-bind=" bmi=weight/(height*height)"></span>
+        </div>
+
+        <button onclick="calcBmi()" id="button">submit</button>
+        <div id="result"></div>
+      </div>
+  </center>
+  <!---<div ng-if="bmi>18.5 && bmi<25">Normal</div>
+     <div ng-if="bmi>25 && bmi<30">over weight</div>
+     <div ng-if="bmi>30 && bmi<40">Obesity</div>
+     <div ng-if="bmi>40">Morbid Obesity</div>
+     <script>
+      var app=angular.module("bmiApp",[])
+       app.controller("myCtrl",function($scope){
+         $scope.weight;
+         $scope.height;
+         $scope.calcBmi=function(){
+           $scope.bmi=$scope.weight/($scope.height*$scope.height);
+         }
+       });
+     </script>--->
+
+
+  </div>
+</body>
+
+</html>
